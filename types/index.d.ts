@@ -15,15 +15,13 @@ interface Feedback {
 
 interface Interview {
   id: string;
-  role: string;
-  level: string;
-  questions: string[];
-  techstack: string[];
-  createdAt: string;
   userId: string;
+  company: string;
+  role: string;
   type: string;
-  finalized: boolean;
+  techstack: string[];
 }
+
 
 interface CreateFeedbackParams {
   interviewId: string;
@@ -39,7 +37,7 @@ interface User {
 }
 
 interface InterviewCardProps {
-  interviewId?: string;
+  id?: string;
   userId?: string;
   role: string;
   type: string;

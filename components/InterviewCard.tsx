@@ -1,51 +1,78 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import dayjs from 'dayjs';
-import { getRandomInterviewCover } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import DisplayTechIcons from './DisplayTechIcons';
-const InterviewCard = ({interviewId , userId , role , type , techstack , createdAt }: InterviewCardProps) => {
-  
-  const feedback= null as Feedback | null;
-  const normalizedType =/mx/gi.test(type)?'Mixed':type;
-  const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format('MMM D, YYYY');
+'use client';
 
-  return (
-    <div className='card-border w-[360px] max-sm:w-full min-h-96'>
-       <div className='card-interview'>
-        <div>
-          <div className='absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-600'>
-            <p className='badge-text'>{normalizedType}</p>
-          </div>
-          <Image src={getRandomInterviewCover()} alt='cover' width={90} height={90}
-          className='rounded-full object-fit size-[90px]'/>
-          <h3 className='mt-5 capitalize'>{role} Interview</h3>
-          <div className='flex flex-row gap-5 mat-3'>
-            <div className='flex flex-row gap-2'>
-              <Image src='/calendar.svg' alt='calendar' width={22} height={22}/>
-              <p>{formattedDate}</p>
-            </div>
-            <div className='flex flex-row gap-2 items-center'>
-              <Image src='/star.svg' alt='start' width={22} height={22} />
-              <p>{feedback?.totalScore || '---'}/100 </p>
-            </div>
-          </div>
-          <p className ="line-clamp-2 mt-5">
-          {feedback?.finalAssessment || 'You have not taken the interview yet. Take it now to mprove your skills'}
-          </p>
-        </div>
-        <div className='flex flex-row jusify-between'>
-          <DisplayTechIcons techStack={techstack} />
-          <Button className='btn-primary'>
-            <Link href={feedback?`/intervew/ ${interviewId} /feedback` : `/interview/${interviewId}`}>
-            {feedback? 'Check Feedback' : 'View Interview'}
-            </Link>
-          </Button>
-        </div>
-        </div>
-    </div>
-  )
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { getInterviewCover } from '@/lib/utils';
+import DisplayTechIcons from './DisplayTechIcons';
+import { interviewCardsData } from '@/constants/index'; // import from root-level constants/index.ts
+
+interface InterviewCardProps {
+  id?: string;
+  userId?: string;
+  role: string;
+  type: string;
+  techstack: string[];
+  company: string;
+  
 }
 
-export default InterviewCard
+const InterviewCard = ({ id, userId, role, type, techstack, company }: InterviewCardProps) => {
+  const [imgSrc, setImgSrc] = useState(getInterviewCover(company));
+  const feedback = null as Feedback | null;
+  const normalizedType = type.toLowerCase();
+  return (
+    <div className='card-border w-[360px] max-sm:w-full min-h-96'>
+      <div className='card-interview p-4 flex flex-col gap-4'>
+
+        {/* Badge */}
+        <div className='absolute top-0 right-0 px-4 py-2 rounded-bl-lg bg-light-600 z-10'>
+          <p className='badge-text'>{normalizedType}</p>
+        </div>
+
+        {/* Company Logo and Role */}
+        <div className='flex flex-col items-center'>
+          <Image
+            src={imgSrc}
+            alt='cover'
+            width={90}
+            height={90}
+            className='rounded-full object-cover size-[90px]'
+            onError={() => setImgSrc('/covers/default.png')}
+          />
+          <h3 className='mt-4 text-center capitalize font-semibold'>{role} Interview</h3>
+          <p className='text-sm text-gray-500 mt-1'>{company}</p>
+        </div>
+
+        {/* Message or Feedback */}
+        <p className='line-clamp-3 text-sm text-center'>
+          {feedback?.finalAssessment || 'You have not taken the interview yet. Take it now to improve your skills.'}
+        </p>
+
+        {/* Tech Stack as Text */}
+        <p className='text-xs text-primary-400 font-medium mt-2 mb-2 text-center'>
+  {techstack && techstack.length > 0
+    ? `Tech Stack: ${techstack.slice(0, 3).join(', ')}`
+    : 'No tech stack specified'}
+</p>
+
+
+        {/* Tech Stack Icons */}
+      
+
+        {/* Button */}
+        <div className='flex justify-end mt-auto w-full'>
+          <Button className='btn-primary'>
+            <Link href={feedback ? `/interview/${id}/feedback` : `/interview/${id}`} className='w-full h-full flex items-center justify-center'>
+              {feedback ? 'Check Feedback' : 'Take Interview'}
+            </Link>
+           
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InterviewCard;

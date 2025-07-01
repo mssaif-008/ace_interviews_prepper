@@ -1,4 +1,4 @@
-import { interviewCovers, mappings } from "@/constants";
+import { interviewCovers,interviewCardsData, mappings } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -41,7 +41,10 @@ export const getTechLogos = async (techArray: string[]) => {
   return results;
 };
 
-export const getRandomInterviewCover = () => {
-  const randomIndex = Math.floor(Math.random() * interviewCovers.length);
-  return `/covers${interviewCovers[randomIndex]}`;
+export const getInterviewCover = (companyName: string) => {
+  if (!companyName) return '/covers/default.png';
+
+  const formattedName = companyName.toLowerCase().replace(/\s+/g, '-');
+  return `/covers/${formattedName}.png`;
 };
+

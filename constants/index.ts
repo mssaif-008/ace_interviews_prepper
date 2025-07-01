@@ -190,41 +190,169 @@ export const mappings = {
 // });
 
 export const interviewCovers = [
-  "/adobe.png",
-  "/amazon.png",
   "/facebook.png",
-  "/hostinger.png",
-  "/pinterest.png",
-  "/quora.png",
-  "/reddit.png",
-  "/skype.png",
+  "/google.png",
+  "/amazon.png",
   "/spotify.png",
-  "/telegram.png",
-  "/tiktok.png",
-  "/yahoo.png",
+  "/adobe.png",
+  "/tcs.png",
+  "/wipro.png",
+  "/zoho.png",
+  "/infosys.png",
+  "/hcl.png",
+  "/tech-mahindra.png",
+  "/mindtree.png",
+  "/freshworks.png",
+  "/swiggy.png",
+  "/ola.png",
+  "/paytm.png",
+  "/zomato.png"
 ];
 
-export const dummyInterviews: Interview[] = [
+
+export const interviewCardsData: Interview[] = [
   {
     id: "1",
     userId: "user1",
-    role: "Frontend Developer",
+    company: "facebook",
+    role: "React Frontend Developer",
     type: "Technical",
-    techstack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-    level: "Junior",
-    questions: ["What is React?"],
-    finalized: false,
-    createdAt: "2024-03-15T10:00:00Z",
+    techstack: ["HTML", "CSS", "JavaScript", "React", "Redux", "TypeScript", "Tailwind CSS"]
   },
   {
     id: "2",
     userId: "user1",
-    role: "Full Stack Developer",
-    type: "Mixed",
-    techstack: ["Node.js", "Express", "MongoDB", "React"],
-    level: "Senior",
-    questions: ["What is Node.js?"],
-    finalized: false,
-    createdAt: "2024-03-14T15:30:00Z",
+    company: "google",
+    role: "Spring Boot Backend Developer",
+    type: "Technical",
+    techstack: ["Java", "Spring Boot", "Hibernate", "MySQL", "JPA", "Maven"]
   },
+  {
+    id: "3",
+    userId: "user1",
+    company: "amazon",
+    role: "AWS DevOps Engineer",
+    type: "Mixed",
+    techstack: ["AWS", "Docker", "Terraform", "Jenkins", "EC2", "S3"]
+   },
+  {
+    id: "4",
+    userId: "user1",
+    company: "spotify",
+    role: "Data Scientist",
+    type: "Technical",
+    techstack: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQL"]
+  },
+  // {
+  //   id: "5",
+  //   userId: "user1",
+  //   company: "adobe",
+  //   role: "UI Designer",
+  //   type: "Behavioral",
+  //   techstack: ["Figma", "Sketch", "Adobe XD", "Wireframes", "Design Systems"]
+  // },
+  // {
+  //   id: "6",
+  //   userId: "user1",
+  //   company: "tcs",
+  //   role: "Angular Frontend Developer",
+  //   type: "Technical",
+  //   techstack: ["HTML", "CSS", "TypeScript", "Angular", "RxJS", "Bootstrap"]
+  // },
+  // {
+  //   id: "7",
+  //   userId: "user1",
+  //   company: "wipro",
+  //   role: "Django Backend Developer",
+  //   type: "Technical",
+  //   techstack: ["Python", "Django", "PostgreSQL", "SQLite", "Django REST Framework"]
+  // },
+  {
+    id: "8",
+    userId: "user1",
+    company: "zoho",
+    role: "MERN Stack Developer",
+    type: "Mixed",
+    techstack: ["MongoDB", "Express.js", "React", "Node.js", "Redux", "JWT"]
+  },
+  // {
+  //   id: "9",
+  //   userId: "user1",
+  //   company: "infosys",
+  //   role: "Automation Test Engineer",
+  //   type: "Technical",
+  //   techstack: ["Selenium", "Cypress", "Python", "Java", "Appium", "Postman"]
+  // },
+  // {
+  //   id: "10",
+  //   userId: "user1",
+  //   company: "zomato",
+  //   role: "Data Analyst",
+  //   type: "Mixed",
+  //   techstack: ["Excel", "SQL", "Power BI", "Tableau", "Python"]
+  // },
+  // {
+  //   id: "11",
+  //   userId: "user1",
+  //   company: "facebook",
+  //   role: "Blockchain Developer",
+  //   type: "Technical",
+  //   techstack: ["Solidity", "Ethereum", "Web3.js", "Hardhat", "Metamask"]
+  // },
+  // {
+  //   id: "12",
+  //   userId: "user1",
+  //   company: "google",
+  //   role: "ML Engineer",
+  //   type: "Technical",
+  //   techstack: ["Python", "TensorFlow", "Keras", "PyTorch", "Scikit-learn", "MLflow"]
+  // },
+  // {
+  //   id: "13",
+  //   userId: "user1",
+  //   company: "amazon",
+  //   role: "Cybersecurity Engineer",
+  //   type: "Technical",
+  //   techstack: ["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Firewalls"]
+  // },
+  // {
+  //   id: "14",
+  //   userId: "user1",
+  //   company: "tcs",
+  //   role: "Linux System Administrator",
+  //   type: "Technical",
+  //   techstack: ["Linux", "Shell Scripting", "Nginx", "Apache", "Bash"]
+  // },
+  // {
+  //   id: "15",
+  //   userId: "user1",
+  //   company: "wipro",
+  //   role: "Vue Frontend Developer",
+  //   type: "Technical",
+  //   techstack: ["HTML", "CSS", "JavaScript", "Vue.js", "Vuex", "Vuetify"]
+  // },
+  // {
+  //   id: "16",
+  //   userId: "user1",
+  //   company: "zoho",
+  //   role: "iOS Developer",
+  //   type: "Mixed",
+  //   techstack: ["Swift", "Xcode", "SwiftUI", "CocoaPods"]
+  // },
+  // {
+  //   id: "17",
+  //   userId: "user1",
+  //   company: "infosys",
+  //   role: "Google Cloud DevOps Engineer",
+  //   type: "Technical",
+  //   techstack: ["GCP", "Kubernetes", "Docker", "Cloud Functions"]
+  // }
 ];
+
+export const getFamousInterviewById = (id: string): Interview | undefined => {
+  return interviewCardsData.find((interview) => interview.id === id);
+};
+
+
+
+
