@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import PredefinedAgent from "@/components/PredefinedAgent";
+import { addInterviewToUser } from "@/lib/actions/general.action";
 
 import {
  
@@ -57,6 +58,9 @@ const InterviewDetails = async ({ params }: RouteParams) => {
        
         /*{feedbackId={feedback?.id}}*/
       />
+      
+       
+      
     </>
   );
 };

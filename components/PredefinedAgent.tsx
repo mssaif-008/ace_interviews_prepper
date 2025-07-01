@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { getVapi } from '@/lib/vapi.sdk';
+ import { addInterviewToUser } from "@/lib/actions/general.action"; // adjust path based on your file structure
+
 
 enum CallStatus {
   INACTIVE = 'INACTIVE',
@@ -60,10 +62,25 @@ const PredefinedAgent = ({ userName, userId, interviewId,type,company,role,techS
 
     const vapi = getVapi();
 
-    const onCallStart = () => {
-      console.log('✅ VAPI Call Started');
-      setCallStatus(CallStatus.ACTIVE);
-    };
+    const onCallStart = async () => {
+        console.log('✅ VAPI Call Started');
+        setCallStatus(CallStatus.ACTIVE);
+      
+        try {
+          const res = await fetch('/api/add-interview', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId, interviewId }),
+          });
+      
+          if (!res.ok) throw new Error('Failed to add interview');
+      
+          console.log("📌 Interview ID added to user successfully.");
+        } catch (error) {
+          console.error("❌ Failed to add interview to user:", error);
+        }
+      };
+      
 
     const onCallEnd = () => setCallStatus(CallStatus.FINISHED);
 
