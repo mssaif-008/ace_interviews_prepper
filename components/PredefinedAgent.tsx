@@ -173,6 +173,7 @@ const PredefinedAgent = ({ userName, userId, interviewId,type,company,role,techS
     const vapi = getVapi();
     setCallStatus(CallStatus.FINISHED);
     vapi.stop();
+    await fetch('/api/dev/upload-famous-interviews');
    
   };
 

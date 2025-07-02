@@ -213,7 +213,7 @@ export const interviewCovers = [
 export const interviewCardsData: Interview[] = [
   {
     id: "1",
-    userId: "user1",
+    userId: "famous",
     company: "facebook",
     role: "React Frontend Developer",
     type: "Technical",
@@ -221,7 +221,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "2",
-    userId: "user1",
+    userId: "famous",
     company: "google",
     role: "Spring Boot Backend Developer",
     type: "Technical",
@@ -229,7 +229,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "3",
-    userId: "user1",
+    userId: "famous",
     company: "amazon",
     role: "AWS DevOps Engineer",
     type: "Mixed",
@@ -237,7 +237,7 @@ export const interviewCardsData: Interview[] = [
    },
   {
     id: "4",
-    userId: "user1",
+    userId: "famous",
     company: "spotify",
     role: "Data Scientist",
     type: "Technical",
@@ -245,7 +245,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "5",
-    userId: "user1",
+    userId: "famous",
     company: "adobe",
     role: "UI Designer",
     type: "Behavioral",
@@ -253,7 +253,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "6",
-    userId: "user1",
+    userId: "famous",
     company: "tcs",
     role: "Angular Frontend Developer",
     type: "Technical",
@@ -261,7 +261,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "7",
-    userId: "user1",
+    userId: "famous",
     company: "wipro",
     role: "Django Backend Developer",
     type: "Technical",
@@ -269,7 +269,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "8",
-    userId: "user1",
+    userId: "famous",
     company: "zoho",
     role: "MERN Stack Developer",
     type: "Mixed",
@@ -285,7 +285,7 @@ export const interviewCardsData: Interview[] = [
   // },
    {
     id: "10",
-    userId: "user1",
+    userId: "famous",
     company: "zomato",
     role: "Data Analyst",
     type: "Mixed",
@@ -293,7 +293,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "11",
-    userId: "user1",
+    userId: "famous",
     company: "facebook",
     role: "Blockchain Developer",
     type: "Technical",
@@ -301,7 +301,7 @@ export const interviewCardsData: Interview[] = [
   },
    {
     id: "12",
-    userId: "user1",
+    userId: "famous",
     company: "google",
     role: "ML Engineer",
     type: "Technical",
@@ -309,7 +309,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "13",
-    userId: "user1",
+    userId: "famous",
     company: "amazon",
     role: "Cybersecurity Engineer",
     type: "Technical",
@@ -317,7 +317,7 @@ export const interviewCardsData: Interview[] = [
   },
    {
     id: "14",
-    userId: "user1",
+    userId: "famous",
     company: "tcs",
     role: "Linux System Administrator",
     type: "Technical",
@@ -325,7 +325,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "15",
-    userId: "user1",
+    userId: "famous",
     company: "wipro",
     role: "Vue Frontend Developer",
     type: "Technical",
@@ -333,7 +333,7 @@ export const interviewCardsData: Interview[] = [
   },
   {
     id: "16",
-    userId: "user1",
+    userId: "famous",
     company: "zoho",
     role: "iOS Developer",
     type: "Mixed",

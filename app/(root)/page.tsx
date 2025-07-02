@@ -82,7 +82,7 @@ if (!user?.id) return <p>Loading user...</p>;
       <section className='flex flex-col gap-6 mt-8'>
         <h2>Take the Famous Interviews</h2>
         <div className='interviews-section'>
-        {famousInterviews.slice(0, 10).map((card) => (
+        {famousInterviews.slice(0, 20).map((card) => (
   <InterviewCard
     key={card.company + card.role}
     id={card.id}
