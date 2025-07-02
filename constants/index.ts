@@ -243,30 +243,30 @@ export const interviewCardsData: Interview[] = [
     type: "Technical",
     techstack: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQL"]
   },
-  // {
-  //   id: "5",
-  //   userId: "user1",
-  //   company: "adobe",
-  //   role: "UI Designer",
-  //   type: "Behavioral",
-  //   techstack: ["Figma", "Sketch", "Adobe XD", "Wireframes", "Design Systems"]
-  // },
-  // {
-  //   id: "6",
-  //   userId: "user1",
-  //   company: "tcs",
-  //   role: "Angular Frontend Developer",
-  //   type: "Technical",
-  //   techstack: ["HTML", "CSS", "TypeScript", "Angular", "RxJS", "Bootstrap"]
-  // },
-  // {
-  //   id: "7",
-  //   userId: "user1",
-  //   company: "wipro",
-  //   role: "Django Backend Developer",
-  //   type: "Technical",
-  //   techstack: ["Python", "Django", "PostgreSQL", "SQLite", "Django REST Framework"]
-  // },
+  {
+    id: "5",
+    userId: "user1",
+    company: "adobe",
+    role: "UI Designer",
+    type: "Behavioral",
+    techstack: ["Figma", "Sketch", "Adobe XD", "Wireframes", "Design Systems"]
+  },
+  {
+    id: "6",
+    userId: "user1",
+    company: "tcs",
+    role: "Angular Frontend Developer",
+    type: "Technical",
+    techstack: ["HTML", "CSS", "TypeScript", "Angular", "RxJS", "Bootstrap"]
+  },
+  {
+    id: "7",
+    userId: "user1",
+    company: "wipro",
+    role: "Django Backend Developer",
+    type: "Technical",
+    techstack: ["Python", "Django", "PostgreSQL", "SQLite", "Django REST Framework"]
+  },
   {
     id: "8",
     userId: "user1",
@@ -283,63 +283,63 @@ export const interviewCardsData: Interview[] = [
   //   type: "Technical",
   //   techstack: ["Selenium", "Cypress", "Python", "Java", "Appium", "Postman"]
   // },
-  // {
-  //   id: "10",
-  //   userId: "user1",
-  //   company: "zomato",
-  //   role: "Data Analyst",
-  //   type: "Mixed",
-  //   techstack: ["Excel", "SQL", "Power BI", "Tableau", "Python"]
-  // },
-  // {
-  //   id: "11",
-  //   userId: "user1",
-  //   company: "facebook",
-  //   role: "Blockchain Developer",
-  //   type: "Technical",
-  //   techstack: ["Solidity", "Ethereum", "Web3.js", "Hardhat", "Metamask"]
-  // },
-  // {
-  //   id: "12",
-  //   userId: "user1",
-  //   company: "google",
-  //   role: "ML Engineer",
-  //   type: "Technical",
-  //   techstack: ["Python", "TensorFlow", "Keras", "PyTorch", "Scikit-learn", "MLflow"]
-  // },
-  // {
-  //   id: "13",
-  //   userId: "user1",
-  //   company: "amazon",
-  //   role: "Cybersecurity Engineer",
-  //   type: "Technical",
-  //   techstack: ["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Firewalls"]
-  // },
-  // {
-  //   id: "14",
-  //   userId: "user1",
-  //   company: "tcs",
-  //   role: "Linux System Administrator",
-  //   type: "Technical",
-  //   techstack: ["Linux", "Shell Scripting", "Nginx", "Apache", "Bash"]
-  // },
-  // {
-  //   id: "15",
-  //   userId: "user1",
-  //   company: "wipro",
-  //   role: "Vue Frontend Developer",
-  //   type: "Technical",
-  //   techstack: ["HTML", "CSS", "JavaScript", "Vue.js", "Vuex", "Vuetify"]
-  // },
-  // {
-  //   id: "16",
-  //   userId: "user1",
-  //   company: "zoho",
-  //   role: "iOS Developer",
-  //   type: "Mixed",
-  //   techstack: ["Swift", "Xcode", "SwiftUI", "CocoaPods"]
-  // },
-  // {
+   {
+    id: "10",
+    userId: "user1",
+    company: "zomato",
+    role: "Data Analyst",
+    type: "Mixed",
+    techstack: ["Excel", "SQL", "Power BI", "Tableau", "Python"]
+  },
+  {
+    id: "11",
+    userId: "user1",
+    company: "facebook",
+    role: "Blockchain Developer",
+    type: "Technical",
+    techstack: ["Solidity", "Ethereum", "Web3.js", "Hardhat", "Metamask"]
+  },
+   {
+    id: "12",
+    userId: "user1",
+    company: "google",
+    role: "ML Engineer",
+    type: "Technical",
+    techstack: ["Python", "TensorFlow", "Keras", "PyTorch", "Scikit-learn", "MLflow"]
+  },
+  {
+    id: "13",
+    userId: "user1",
+    company: "amazon",
+    role: "Cybersecurity Engineer",
+    type: "Technical",
+    techstack: ["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Firewalls"]
+  },
+   {
+    id: "14",
+    userId: "user1",
+    company: "tcs",
+    role: "Linux System Administrator",
+    type: "Technical",
+    techstack: ["Linux", "Shell Scripting", "Nginx", "Apache", "Bash"]
+  },
+  {
+    id: "15",
+    userId: "user1",
+    company: "wipro",
+    role: "Vue Frontend Developer",
+    type: "Technical",
+    techstack: ["HTML", "CSS", "JavaScript", "Vue.js", "Vuex", "Vuetify"]
+  },
+  {
+    id: "16",
+    userId: "user1",
+    company: "zoho",
+    role: "iOS Developer",
+    type: "Mixed",
+    techstack: ["Swift", "Xcode", "SwiftUI", "CocoaPods"]
+  },
+  //  {
   //   id: "17",
   //   userId: "user1",
   //   company: "infosys",

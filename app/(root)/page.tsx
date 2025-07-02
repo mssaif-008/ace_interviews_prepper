@@ -52,7 +52,7 @@ if (!user?.id) return <p>Loading user...</p>;
             <Link href="/interview">Take a custom interview</Link> 
           </Button>} */}
         </div>
-        <Image src='/robot-interviewer.png' alt='robo' width={400} height={400} className="max-sm:hidden" />
+        <Image src='/the-bot-green.png' alt='robo' width={400} height={400} className="max-sm:hidden" />
       </section>
       <section className='flex flex-col gap-6 mt-8'>
         <h2>Your Interviews</h2>

@@ -193,7 +193,7 @@ const PredefinedAgent = ({ userName, userId, interviewId,type,company,role,techS
         <div className="card-border">
           <div className="card-content">
             <Image
-              src="/user-avatar.png"
+              src="/the-mass-user-96.png"
               alt="user avatar"
               width={540}
               height={540}

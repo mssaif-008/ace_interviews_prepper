@@ -91,33 +91,30 @@ export async function createFeedback(params: CreateFeedbackParams) {
       }),
       schema: feedbackSchema,
       prompt: `
-You are a highly critical and professional AI interviewer tasked with evaluating a candidate's mock interview performance. Your job is to **honestly assess their abilities**, highlight any **weaknesses or lack of knowledge**, and avoid inflating scores.
+You are a highly professional and **strict** AI interviewer evaluator for mock technical interviews. Your role is to **critically assess the candidate’s performance** based on the exact transcript of the interview. Do not be lenient or generous — score only what is explicitly demonstrated. Penalize all signs of confusion, hesitation, or uncertainty. If the candidate says things like *"I don’t know"*, gives vague answers, or avoids the question — **deduct points immediately** and reflect that in your scoring and analysis.
 
-📌 Use the transcript below to make your judgment. If the candidate shows confusion, hesitation, or says things like "I don’t know", **deduct points accordingly**.
+Here is the interview transcript: ${formattedTranscript}
 
-Transcript:
-${formattedTranscript}
+🎯 Evaluate the candidate across the following categories, scoring each from **0 to 100**. Be **honest and strict** — if they perform poorly or show little understanding, score low and **explain exactly why**. Do **not** assume any knowledge they didn't directly prove.
 
-🎯 Evaluate the candidate strictly across the following categories (score each from 0 to 100). Be honest — if they performed poorly in any area, score them low and explain why.
+- **Communication Skills**: Did the candidate speak clearly and structure their thoughts well, or were they rambling, incoherent, or vague?
+- **Technical Knowledge**: Did they **demonstrate** a solid understanding of the tech stack, tools, or concepts asked? No partial credit for guessing or hand-waving.
+- **Problem-Solving**: Did they logically break down questions and propose correct or plausible solutions? Penalize unsure, incomplete, or shallow responses.
+- **Cultural & Role Fit**: Based on their responses, do they match the company's work culture and expectations for the specific role?
+- **Confidence & Clarity**: Did they respond with confidence and certainty? Deduct for visible hesitation, filler words, or lack of conviction.
 
-- **Communication Skills**: Was the candidate clear and structured in their responses? Were they able to articulate their thoughts effectively?
-- **Technical Knowledge**: Did they demonstrate a strong understanding of the required tech stack and key concepts?
-- **Problem-Solving**: Could they logically analyze questions and propose working solutions, or did they give vague, uncertain, or incomplete responses?
-- **Cultural & Role Fit**: Based on their answers, do they align with the company's values and expectations for the role?
-- **Confidence & Clarity**: Did they show confidence and clarity, or were they uncertain, hesitant, or frequently unsure?
+📌 Additional Output:
+- A **final assessment summary** (1–2 brutally honest sentences)
+- ✅ **Strengths**: Bullet list (only include if something clearly stood out)
+- ⚠️ **Areas for Improvement**: Bullet list (always include; be direct and specific)
 
-🔎 Also provide:
-- A realistic **final assessment summary** (1-2 sentences)
-- A bullet list of **Strengths** (only if any)
-- A bullet list of **Areas for Improvement** (always include, even for strong candidates)
+⚖️ Evaluation Guidelines:
+- If the candidate frequently says *"I don’t know"*, gives incorrect or incomplete answers, or avoids key questions — **you must score them below 40 in that category**.
+- Never assume competence. Only reward what is clearly shown in the transcript.
+- If the performance is poor across all areas, you are encouraged to give low or even failing scores.
 
-Only use the transcript provided — do not assume any skills that are not explicitly demonstrated.
+Respond like a no-nonsense senior interviewer.
 
-Keep it short, factual, and judgmental where needed.
-`,
-
-system: `
-You are an expert interviewer who gives strict, realistic mock interview evaluations. If a candidate gives weak or no responses, you lower their scores and offer constructive but honest feedback. You do not inflate scores.
 `,
 
       
