@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { getVapi } from '@/lib/vapi.sdk';
  import { addInterviewToUser } from "@/lib/actions/general.action"; // adjust path based on your file structure
+ import { createFeedback } from '@/lib/actions/general.action'; // Adjust this path as needed
 
 
 enum CallStatus {
@@ -82,7 +83,34 @@ const PredefinedAgent = ({ userName, userId, interviewId,type,company,role,techS
       };
       
 
-    const onCallEnd = () => setCallStatus(CallStatus.FINISHED);
+      const onCallEnd = async () => {
+        setCallStatus(CallStatus.FINISHED);
+      
+        try {
+          const res = await fetch('/api/feedback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              interviewId,
+              userId,
+              transcript: messages,
+            }),
+          });
+      
+          const data = await res.json();
+      
+          if (data.success) {
+            console.log('✅ Feedback generated:', data.feedbackId);
+            router.push(`/interview/${interviewId}/feedback`);
+          } else {
+            console.error('❌ Feedback generation failed');
+          }
+        } catch (error) {
+          console.error('❌ Error calling feedback API:', error);
+        }
+      };
+      
+      
 
     const onMessage = (message: any) => {
       if (message.type === 'transcript' && message.transcriptType === 'final') {
@@ -141,10 +169,11 @@ const PredefinedAgent = ({ userName, userId, interviewId,type,company,role,techS
     }
   };
 
-  const handleDisconnect = () => {
+  const handleDisconnect = async () => {
     const vapi = getVapi();
     setCallStatus(CallStatus.FINISHED);
     vapi.stop();
+   
   };
 
   const lastMessage = messages[messages.length - 1]?.content;

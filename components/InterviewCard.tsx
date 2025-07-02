@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { getInterviewCover } from '@/lib/utils';
 import DisplayTechIcons from './DisplayTechIcons';
 import { interviewCardsData } from '@/constants/index'; // import from root-level constants/index.ts
+import { getInterviewById } from '@/lib/actions/general.action';
 
 interface InterviewCardProps {
   id?: string;
@@ -15,13 +16,15 @@ interface InterviewCardProps {
   type: string;
   techstack: string[];
   company: string;
-  
+  feedback?: Feedback | null;
 }
 
-const InterviewCard = ({ id, userId, role, type, techstack, company }: InterviewCardProps) => {
+const InterviewCard = ({ id, userId, role, type, techstack, company, feedback }: InterviewCardProps) => {
+  console.log('InterviewCard id:', id);
   const [imgSrc, setImgSrc] = useState(getInterviewCover(company));
-  const feedback = null as Feedback | null;
   const normalizedType = type.toLowerCase();
+  
+ 
   return (
     <div className='card-border w-[360px] max-sm:w-full min-h-96'>
       <div className='card-interview p-4 flex flex-col gap-4'>
